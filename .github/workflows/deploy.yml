@@ -32,3 +32,17 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/be18-images:latest
+      - 
+        name: connect to server using SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker stop be18Container
+            docker rm be18Container
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/be18-images
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/be18-images
+            docker run -d -p 80:80 -e DBUSER=${{ secrets.DBUSER }} -e DBPASS=${{ secrets.DBPASS }} -e DBHOST=${{ secrets.DBHOST }} -e DBPORT=${{ secrets.DBPORT }} -e DBNAME=${{ secrets.DBNAME }} -e JWTSECRET=${{ secrets.JWTSECRET }} --name be18Container ${{ secrets.DOCKER_USERNAME }}/be18-images:latest
