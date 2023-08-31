@@ -1,0 +1,12 @@
+mode: set
+fakhry/cleanarch/features/user/service/logic.go:16.65,21.2 1 1
+fakhry/cleanarch/features/user/service/logic.go:24.113,26.16 2 0
+fakhry/cleanarch/features/user/service/logic.go:26.16,28.3 1 0
+fakhry/cleanarch/features/user/service/logic.go:29.2,30.16 2 0
+fakhry/cleanarch/features/user/service/logic.go:30.16,32.3 1 0
+fakhry/cleanarch/features/user/service/logic.go:33.2,33.30 1 0
+fakhry/cleanarch/features/user/service/logic.go:37.65,39.2 1 0
+fakhry/cleanarch/features/user/service/logic.go:42.59,47.24 2 1
+fakhry/cleanarch/features/user/service/logic.go:47.24,49.3 1 1
+fakhry/cleanarch/features/user/service/logic.go:50.2,51.12 2 1
+fakhry/cleanarch/features/user/service/logic.go:55.59,58.2 2 1
