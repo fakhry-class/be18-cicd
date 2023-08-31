@@ -11,8 +11,8 @@ import (
 
 func main() {
 	cfg := config.InitConfig()
-	// dbSql := database.InitDBMysql(cfg)
-	dbSql := database.InitDBPostgres(cfg)
+	dbSql := database.InitDBMysql(cfg)
+	// dbSql := database.InitDBPostgres(cfg)
 	database.InitialMigration(dbSql)
 
 	// create a new echo instance
